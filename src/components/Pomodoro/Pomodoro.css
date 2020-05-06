@@ -1,0 +1,350 @@
+/* Pomodoro Styles  */
+
+.pomodoro-widget {
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.task-page {
+    background-color: #fff;
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.task-page.show {
+    animation: slide-task-page 0.3s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes slide-task-page {
+    0% { opacity: 0; transform: translateX(-100%); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.task-page-header {
+    padding: 0.5em 1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.task-page-header h3 {
+    font-weight: lighter;
+    margin-left: 2em;
+}
+
+.back-btn {
+    background-color: transparent;
+    position: absolute;
+    left: 1em;
+    top: 0.5em;
+}
+
+.back-btn-icon { font-size: 1.7rem; }
+
+.task-settings-form {
+    width: 90%;
+    height: 80%;
+}
+
+.input-container {
+    border-bottom: 0.1rem solid rgba(150, 150, 150, 0.3);
+    margin-bottom: 1em;
+    padding: 1em 0;
+    width: 100%;
+}
+
+.input-container label { font-size: 1.2em; }
+
+.input-container input {
+    border: none;
+    width: 100%;
+    max-width: 70%;
+    text-align: right;
+}
+
+.input-container input,
+.input-container select {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+}
+
+.input-container input:focus {
+    background-color: transparent;
+    outline: none;
+}
+
+.input-container select {
+    cursor: pointer;
+    outline: none;
+    padding-left: 0.3em;
+    width: 3.5em;
+}
+
+.input-container .error {
+    color: var(--pomodoro-timer);
+    font-size: 0.8em;
+
+}
+
+.input-field { float: right;}
+
+.task-info {
+    justify-self: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1em;
+    min-height: 15vh;
+    padding: 0 1em;
+    width: 100%;
+}
+
+.current-task {
+    font-size: 1.5em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 0.5em;
+    text-align: center;
+    width: 100%;
+}
+
+.pomodoro-meter {
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 18em;
+}
+
+.pomodoro {
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.pomodoro-icon {
+    color: var(--main);
+    font-size: 1.2em;
+    transition: 0.3s ease-in;
+}
+
+.pomodoro.complete .pomodoro-icon {
+    color: var(--pomodoro-timer);
+}
+
+.pomodoro.current {
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 0 0 rgba(228, 12, 43, 1);
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgba(228, 12, 43, 1);
+        box-shadow: 0 0 0 0 rgba(228, 12, 43, 1);
+    }
+
+    70% {
+        background-color: transparent;
+        box-shadow: 0 0 0 0.5em rgba(228, 12, 43, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(228, 12, 43, 0);
+    }
+}
+
+.timer-info {
+    flex-direction: column;
+    flex-grow: 1;
+    font-size: 16px;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.timer {
+    flex-direction: column;
+    position: relative;
+    width: 18em;
+    height: 18em;
+    transition: 0.5s;
+}
+
+.timer.fall {
+    transform: translateY(100vh) rotateZ(20deg);
+    opacity: 0;
+}
+
+.pomodoros-complete-msg {
+    font-size: 2em;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    transition: 0.3s ease-in;
+    text-align: center;
+    width: 80%;
+    opacity: 0;
+}
+
+.pomodoros-complete-msg.show {
+    opacity: 1;
+}
+
+.time-left {
+    font-family: 'Share Tech Mono', sans-serif;
+    font-size: 4em;
+    position: absolute;
+}
+
+.progress-ring {
+    height: 18em;
+    width: 18em;
+}
+
+.progress-ring-inner,
+.progress-ring-outer {
+    fill: none;
+    stroke: rgba(40, 44, 52, 0.5);
+    stroke-width: 1.1em;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    transition: 1s linear;
+}
+
+.progress-ring-inner {
+    
+    stroke: var(--pomodoro-timer);
+    stroke-miterlimit: 10;
+    stroke-width: 1em;
+}
+
+/* Interface Styles */
+
+.controls {
+    position: absolute;
+    right: 0;
+    bottom: 0.5rem;
+    width: 100%;
+}
+
+.pt-btn-group {
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 22rem;
+}
+
+.pt-start-btn {
+    background-color: var(--pomodoro-timer);
+    border-radius: 50%;
+    box-shadow: 0 0 1px rgba(0,0,0,0.3), 0 3px 6px 1px rgba(0,0,0,0.3);
+    width: 3rem;
+    height: 3rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.pt-start-btn:not(.disabled):hover {
+    opacity: 0.7;
+}
+
+.pt-start-btn.disabled {
+    background-color: rgba(40, 44, 52, 0.5);
+    cursor: not-allowed;
+}
+
+.pt-restart-btn,
+.pt-add-btn {
+    background-color: transparent;
+}
+
+.pt-restart-btn:not(.disabled):hover .pt-restart-icon,
+.pt-add-btn:not(.disabled):hover .pt-add-icon {
+    color: var(--pomodoro-timer);
+}
+
+.icon {
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.pt-start-icon {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.pt-restart-icon,
+.pt-add-icon {
+    font-size: 1.7rem;
+}
+
+.pt-restart-btn:not(.disabled) .pt-restart-icon,
+.pt-add-btn:not(.disabled) .pt-add-icon {
+    color: var(--main);
+}
+
+
+@media (max-height: 476px) and (orientation: landscape) {
+    .pomodoro-widget {
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+    }
+
+    .task-info {
+        height: 50%;
+        align-self: flex-start;
+    }
+
+    .pomodoro-meter {
+        justify-content: center;
+    }
+
+    .timer-info {
+        font-size: 14px;
+        justify-content: center;
+        margin-left: 1em;
+    }
+
+    .controls {
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .task-settings-form {
+        width: 50%;
+    }
+    .task-info {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0 2.5em;
+    }
+
+    .current-task { text-align: left; }
+
+    .input-container input {
+        max-width: 60%; 
+    }
+
+    .timer-info {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .timer-info {
+        font-size: 1.7vw;
+    }
+}

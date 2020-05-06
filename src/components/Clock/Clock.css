@@ -1,0 +1,136 @@
+/* Clock Styles Start */
+
+.clock-widget {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+
+.clock {
+    font-size: 16px;
+    position: relative;
+}
+
+.clock-face {
+    border-radius: 50%;
+    width: 17em;
+    height: 17em;
+    margin: auto;
+    position: relative;
+}
+
+.hour-position,
+.minute-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+    text-align: center;
+    width: 1em;
+}
+
+.hour {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.2em;
+}
+
+.minute-position {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 1px;
+    width: .5em;
+    margin: 0;
+    transform-origin: left;
+}
+
+.minute-position:nth-of-type(5n) {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 1.6px;
+    width: .8em;
+}
+
+.hand {
+    background-color: #000;
+    border-radius: 100vmax;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0, -50%);
+    transform-origin: 0 0;
+}
+
+.hour-hand {
+    height: 0.5em;
+    width: 30%;
+    z-index: 1;
+}
+
+.min-hand {
+    height: 0.45em;
+    width: 40%;
+    z-index: 2;
+}
+
+.hour-hand::after,
+.min-hand::after {
+    background-color: #fff;
+    border-radius: 100vmax;
+    content: '';
+    height: 35%;
+    width: 1.5em;
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sec-hand {
+    background-color: var(--clock);
+    height: 0.12em;
+    width: 55%;
+    z-index: 3;
+    transform: translate(-7%, -50%);
+}
+
+.sec-hand::after {
+    background-color: #fff;
+    border: 0.2em solid var(--clock);
+    border-radius: 50%;
+    content: '';
+    height: 0.3em;
+    width: 0.3em;
+    position: absolute;
+    left: 7%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.date-info { font-size: 1.2rem; }
+
+/* =================== */
+
+/* Clock Media Queries */
+
+@media (max-height: 476px) and (orientation: landscape) {
+    .clock-widget {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .clock {
+        font-size: 12px;
+        margin-right: 2rem;
+    }
+}
+
+@media (min-width: 1080px) {
+        .clock { font-size: 1.5vw; }
+}
+
+@media (min-width: 1440px) {
+    .clock { font-size: 1.6vw; }
+}
+
+/* =================== */

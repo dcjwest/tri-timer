@@ -1,13 +1,43 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* GLOBAL STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&family=Poppins:wght@300&display=swap');
+
+:root {
+  --main: #282c34;
+  --clock: #0049FF;
+  --pomodoro-timer: #E40C2B;
+  --stopwatch: #30DD00;
+  font-size: 16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Share Tech', sans-serif;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button, 
+button:focus,
+button:hover {
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (min-width: 1440px) {
+  :root {
+    font-size: 1.5vw;
+  }
 }

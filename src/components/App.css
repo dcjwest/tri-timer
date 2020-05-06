@@ -1,0 +1,203 @@
+/* Main App Component Styles */
+
+.App {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.widget {
+    height: calc(100% - 20vh);
+    width: 100%;
+}
+
+/* =================== */
+
+/* Header Styles Start */
+
+header.container {
+    background-color: var(--main);
+    color: #fff;
+    justify-content: space-between;
+    height: 10vh;
+    min-height: 50px;
+    padding: 0 4vw;
+}
+
+.app-title {
+    font-size: 1.3rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    transition: .3s ease;
+}
+
+.app-logo {
+    height: 0;
+    width: 0;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-left: 1.6rem solid #777;
+    margin-right: 0.5rem;
+    transform-origin: 33% 50%;
+    transition: .3s ease;
+}
+
+.animate-logo { animation: spinLogo .4s ease-in-out; }
+
+.fade-in-text { animation: fadeInText .3s ease-in-out; }
+
+.fade-in-widget { animation: fadeInWidget .3s; }
+
+@keyframes spinLogo {
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateX(10px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInWidget {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.btn-settings {
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: .3s ease-in-out;
+}
+
+.btn-settings:hover {
+    color: rgba(255, 255, 255, 0.5);
+    transform: rotate(90deg);
+}
+
+.author {
+    color: #fff;
+    font-family: 'Poppins', 'Share Tech', sans-serif;
+    font-size: 0.6rem;
+    opacity: 0.7;
+    text-align: right;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.author:hover { opacity: 1; }
+
+/* Header Styles End */
+
+/* =================== */
+
+/* Navbar Styles Start */
+
+nav.container {
+    border-top: 0.1rem solid rgba(150, 150, 150, 0.3);
+    min-height: 10vh;
+    width: 100%;
+    padding: 0.3rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+nav.container ul {
+    justify-content: space-evenly;
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+    max-width: 60%;
+}
+
+nav .btn {
+    background-color: transparent;
+    color: #555;
+    font-family: inherit;
+    flex-direction: column;
+    min-width: 3.5rem;
+}
+
+nav .btn span,
+.icon {
+    pointer-events: none;
+    transition: all .3s ease;
+}
+
+nav .btn span {
+    font-weight: lighter;
+    font-size: 0.8rem;
+    user-select: none;
+}
+
+.icon {
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+.btn:hover .icon {
+    color: #fff;
+    transform: rotate(360deg);
+}
+
+.btn:focus .icon { color: #fff; }
+
+.btn-clock:hover,
+.btn-clock:focus { color: var(--clock); }
+
+.btn-clock:hover .icon,
+.btn-clock:focus .icon { background-color: var(--clock); }
+
+.btn-pomodoro:hover,
+.btn-pomodoro:focus { color: var(--pomodoro-timer); }
+
+.btn-pomodoro:hover .icon,
+.btn-pomodoro:focus .icon { background-color: var(--pomodoro-timer); }
+
+.btn-stopwatch:hover,
+.btn-stopwatch:focus { color: var(--stopwatch); }
+
+.btn-stopwatch:hover .icon,
+.btn-stopwatch:focus .icon { background-color: var(--stopwatch); }
+
+/* Navbar Styles End */
+
+/* =================== */
+
+/* Media Queries Start */
+
+@media (min-width: 1024px) {
+    .app-title { font-size: 1.5rem; }
+    
+    .author { font-size: 0.9rem; }
+
+    .icon { font-size: 1.7rem; } 
+
+    nav .btn span { font-size: 1rem; }    
+}
+
+@media (max-width: 476px) {
+    nav.container ul { max-width: 100%; }
+}
+
+@media (max-height: 476px) and (orientation: landscape) {
+    nav.container {
+        border-top: none;
+        border-right: 0.1rem solid rgba(150, 150, 150, 0.3);
+        height: calc(100vh - 50px);
+        max-width: 10vw;
+    }
+
+    nav.container ul { flex-direction: column; }
+
+    nav .btn span { font-size: 0.75rem; }
+
+    .widget {
+        height: calc(100% - 50px);
+        width: calc(100% - 10vw);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+/* =================== */
