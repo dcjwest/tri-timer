@@ -6,7 +6,7 @@ const Header = ({ currentApp, themeColor, appChanged, resetAppChange }) => {
 
     return (
         <header className='container'>
-            <div className='container'>
+            <div className='logo-title container'>
                 <div className={`app-logo ${appChanged? 'animate-logo':''}`} style={{borderLeftColor: `${themeColor}`}}></div>
                 <h1 className={`app-title ${appChanged? 'fade-in-text':''}`}>{currentApp.replace('-', ' ')}</h1>
             </div>

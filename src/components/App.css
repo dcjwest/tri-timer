@@ -24,8 +24,13 @@ header.container {
     padding: 0 4vw;
 }
 
+.logo-title {
+    width: 45%;
+    justify-content: flex-start;
+}
+
 .app-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: normal;
     letter-spacing: 1px;
     transition: .3s ease;
@@ -173,6 +178,10 @@ nav .btn span {
     .icon { font-size: 1.7rem; } 
 
     nav .btn span { font-size: 1rem; }    
+}
+
+@media (min-width: 365px) {
+    .logo-title { width: 52%; }
 }
 
 @media (max-width: 476px) {

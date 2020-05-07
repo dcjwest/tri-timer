@@ -9,8 +9,9 @@
 }
 
 .stopwatch {
-    font-size: 14px;
+    font-size: 15px;
     font-family: 'Share Tech Mono', sans-serif;
+    margin-top: 1em;
     position: relative;
     transition: .5s ease;
     width: 100%;
