@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/tri-timer/static/css/main.331c3555.chunk.css",
-    "main.js": "/tri-timer/static/js/main.74149b5c.chunk.js",
-    "main.js.map": "/tri-timer/static/js/main.74149b5c.chunk.js.map",
+    "main.css": "/tri-timer/static/css/main.ea20e6a1.chunk.css",
+    "main.js": "/tri-timer/static/js/main.309019f8.chunk.js",
+    "main.js.map": "/tri-timer/static/js/main.309019f8.chunk.js.map",
     "runtime-main.js": "/tri-timer/static/js/runtime-main.3fb0a6b2.js",
     "runtime-main.js.map": "/tri-timer/static/js/runtime-main.3fb0a6b2.js.map",
     "static/js/2.aa5f54df.chunk.js": "/tri-timer/static/js/2.aa5f54df.chunk.js",
     "static/js/2.aa5f54df.chunk.js.map": "/tri-timer/static/js/2.aa5f54df.chunk.js.map",
     "index.html": "/tri-timer/index.html",
-    "precache-manifest.8618a5e6bde5926133a2ebd944e40e60.js": "/tri-timer/precache-manifest.8618a5e6bde5926133a2ebd944e40e60.js",
+    "precache-manifest.e38a1417c59050806d39379a580e93cf.js": "/tri-timer/precache-manifest.e38a1417c59050806d39379a580e93cf.js",
     "service-worker.js": "/tri-timer/service-worker.js",
-    "static/css/main.331c3555.chunk.css.map": "/tri-timer/static/css/main.331c3555.chunk.css.map",
+    "static/css/main.ea20e6a1.chunk.css.map": "/tri-timer/static/css/main.ea20e6a1.chunk.css.map",
     "static/js/2.aa5f54df.chunk.js.LICENSE.txt": "/tri-timer/static/js/2.aa5f54df.chunk.js.LICENSE.txt",
     "static/media/pomodoro_alarm.mp3": "/tri-timer/static/media/pomodoro_alarm.a87a9f32.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.3fb0a6b2.js",
     "static/js/2.aa5f54df.chunk.js",
-    "static/css/main.331c3555.chunk.css",
-    "static/js/main.74149b5c.chunk.js"
+    "static/css/main.ea20e6a1.chunk.css",
+    "static/js/main.309019f8.chunk.js"
   ]
 }
