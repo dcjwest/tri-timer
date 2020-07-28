@@ -39,18 +39,43 @@
 }
 
 .task-page-header h3 {
+    font-size: 1.5em;
     font-weight: lighter;
-    margin-left: 2em;
+    text-align: right;
+    width: 100%;
 }
 
 .back-btn {
     background-color: transparent;
+    font-family: inherit;
+    font-size: 1.1em;
+    letter-spacing: 1px;
     position: absolute;
     left: 1em;
     top: 0.5em;
 }
 
-.back-btn-icon { font-size: 1.7rem; }
+.back-btn-icon { font-size: 1.3rem; }
+
+.submit-btn {
+    background-color: var(--pomodoro-timer);
+    border-radius: 10vmax;
+    box-shadow: 0 0 1px rgba(0,0,0,0.3), 0 3px 6px 1px rgba(0,0,0,0.3);
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    margin: 2em auto;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.submit-btn:hover { opacity: 0.7;}
+
+.submit-btn-icon {
+    font-size: 1.2em;
+}
 
 .task-settings-form {
     width: 90%;
@@ -321,10 +346,19 @@
     }
 }
 
+@media (min-width: 567px) {
+    .submit-btn {
+        max-width: 150px;
+    }
+}
+
 @media (min-width: 768px) {
+    .task-page-header h3 { text-align: center; }
+
     .task-settings-form {
         width: 50%;
     }
+
     .task-info {
         flex-direction: row;
         justify-content: space-between;

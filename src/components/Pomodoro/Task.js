@@ -1,9 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { IconContext } from 'react-icons';
-import { MdArrowBack } from 'react-icons/md';
+import { MdArrowBack, MdCheck } from 'react-icons/md';
 
-const Task = ({ showTaskPage, addNewTask, closeTaskPage }) => {
+const Task = (props) => {
+    const {
+        showTaskPage,
+        addNewTask,
+        closeTaskPage,
+        taskName,
+        numOfPomodoros,
+        workDuration,
+        breakDuration
+    } = props;
     const { register, handleSubmit, errors } = useForm();
 
     // Generate Pomodoro Number options.
@@ -45,7 +55,11 @@ const Task = ({ showTaskPage, addNewTask, closeTaskPage }) => {
     return (
         <div className={`task-page container ${showTaskPage? 'show': ''}`}>
             <div className='task-page-header'>
-                <h3>Add Task</h3>
+                <button className='back-btn container' onClick={closeTaskPage}>
+                    <IconContext.Provider value={{className: 'back-btn-icon'}} ><MdArrowBack /></IconContext.Provider>
+                    <span>Back</span>
+                </button>
+                <h3>Task Settings</h3>
             </div>
             <form className='task-settings-form' onSubmit={handleSubmit(onSubmit)}>
                 <div className='input-container'>
@@ -55,6 +69,8 @@ const Task = ({ showTaskPage, addNewTask, closeTaskPage }) => {
                         name='taskName' 
                         placeholder='What is your focus today?' 
                         type='text'
+                        defaultValue={taskName}
+                        onFocus={e => e.target.select()}
                         className='input-field' 
                         ref={register({maxLength:30})} />
                     {errors.taskName && <p className='error'>Please enter a shorter task name (max: 30 characters).</p>}
@@ -66,7 +82,7 @@ const Task = ({ showTaskPage, addNewTask, closeTaskPage }) => {
                         name='pomodoroNumber' 
                         className='input-field' 
                         ref={register} 
-                        defaultValue={4} >
+                        defaultValue={numOfPomodoros} >
                         {pomodoroNumList}
                     </select>
                 </div>
@@ -77,7 +93,7 @@ const Task = ({ showTaskPage, addNewTask, closeTaskPage }) => {
                         name='pomodoroDuration' 
                         className='input-field' 
                         ref={register} 
-                        defaultValue={25}>
+                        defaultValue={workDuration}>
                         {pomodoroDurationList}
                     </select>
                 </div>
@@ -88,16 +104,26 @@ const Task = ({ showTaskPage, addNewTask, closeTaskPage }) => {
                         name='breakDuration' 
                         className='input-field' 
                         ref={register} 
-                        defaultValue={5} >
+                        defaultValue={breakDuration} >
                         {breakDurationList}
                     </select>
                 </div>
-                <button className='back-btn' type='submit' >
-                    <IconContext.Provider value={{className: 'back-btn-icon'}} ><MdArrowBack /></IconContext.Provider>
+                <button className='submit-btn container'>
+                    <span>Submit</span>
+                    <IconContext.Provider value={{className: 'submit-btn-icon'}} ><MdCheck /></IconContext.Provider>
                 </button>
             </form>
         </div>
     );
 }
 
-export default Task;
+const mapStateToProps = state => {
+    return {
+        taskName: state.pomodoro.taskName,
+        numOfPomodoros: state.pomodoro.numOfPomodoros,
+        workDuration: state.pomodoro.workDuration,
+        breakDuration: state.pomodoro.breakDuration
+    }
+}
+
+export default connect(mapStateToProps)(Task);

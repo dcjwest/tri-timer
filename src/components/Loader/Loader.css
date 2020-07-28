@@ -27,13 +27,13 @@
 
 .loader-logo-wrapper {
     animation: shift-logo-left 0.5s ease-out 4.5s forwards;
-    position: absolute;
     transition: 0.3s ease-out;
+    transform: translateX(3em);
 }
 
 @keyframes shift-logo-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-2.6em); }
+    0% { transform: translateX(3em); }
+    100% { transform: translateX(0); }
 }
 
 .loader-circle {
@@ -205,15 +205,15 @@
     font-size: 1.3em;
     margin-left: 1em;
     opacity: 0;
-    position: absolute;;
     text-transform: uppercase;
     transition: 0.3s ease-out;
+    transform: translateX(-3em);
     z-index: -2;
 }
 
 @keyframes animate-loader-text {
-    0% { opacity: 0; transform: translateX(0); }
-    100% { opacity: 1; transform: translateX(2.6em);}
+    0% { opacity: 0; transform: translateX(-3em); }
+    100% { opacity: 1; transform: translateX(0);}
 }
 
 /* =================== */
