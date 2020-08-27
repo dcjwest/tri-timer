@@ -1,8 +1,7 @@
 /* Loader Styles Start */
 
 .loader {
-    animation: hide-loadscreen 0.5s ease-out 5.5s forwards;
-    background-color: #fff;
+    animation: hide-loadscreen 0.7s ease-out 5.5s forwards;
     position: fixed;
     left: 0;
     top: 0;
@@ -18,10 +17,25 @@
         opacity: 1;
         transform: scale(1);
     }
-
     100% {
         opacity: 0;
         transform: scale(0);
+    }
+}
+
+.loader-bg {
+    animation: fade-bg 0.3s ease-out 5.2s forwards;
+    background-color: #fff;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@keyframes fade-bg {
+    100% {
+        opacity: 0;
     }
 }
 
@@ -29,11 +43,16 @@
     animation: shift-logo-left 0.5s ease-out 4.5s forwards;
     transition: 0.3s ease-out;
     transform: translateX(3em);
+    z-index: 1;
 }
 
 @keyframes shift-logo-left {
-    0% { transform: translateX(3em); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(3em);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .loader-circle {
@@ -45,16 +64,20 @@
     transform: scale(0);
     width: 5rem;
     height: 5rem;
-    z-index: -1;
+    z-index: 1;
 }
 
 @keyframes start-loader {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .loader-circle::after {
-    animation: scale-inner-circle 2.3s linear .7s forwards;
+    animation: scale-inner-circle 2.3s linear 0.7s forwards;
     background-color: #fff;
     border-radius: 50%;
     content: '';
@@ -65,10 +88,18 @@
 }
 
 @keyframes scale-inner-circle {
-    0% { transform: scale(0); }
-    15% { transform: scale(1);}
-    85% { transform: scale(1);}
-    100% { transform: scale(0); }
+    0% {
+        transform: scale(0);
+    }
+    15% {
+        transform: scale(1);
+    }
+    85% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
 }
 
 .loader-triangle-group {
@@ -78,11 +109,16 @@
     width: 7.5rem;
     height: 5.5rem;
     transform: rotate(90deg);
+    z-index: 3;
 }
 
 @keyframes spin-triangle-group {
-    0% { transform: rotate(90deg);}
-    100% { transform: rotate(450deg);}
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(450deg);
+    }
 }
 
 .loader-timer {
@@ -90,6 +126,7 @@
     border-radius: 50%;
     opacity: 0;
     position: absolute;
+    z-index: 2;
 }
 
 .loader-timer-icon {
@@ -105,11 +142,9 @@
         transform: scale(0);
     }
     25% {
-        opacity: 1;
         transform: scale(1);
     }
     50% {
-        opacity: 1;
         transform: scale(1) rotate(0);
     }
     100% {
@@ -124,10 +159,9 @@
     opacity: 0;
     position: absolute;
     transform-origin: 50% 65%;
-    transition: .3s ease;
+    transition: 0.3s ease;
     width: 0;
     height: 0;
-    z-index: 1;
 }
 
 .loader-triangle:nth-child(1) {
@@ -186,19 +220,19 @@
 
 @keyframes spin-loader-green-triangle {
     0% {
-         transform: translate(-100%, -100%) rotate(0) scale(0.5);
-     }
-     10% {
-         opacity: 1;
-     }
-     50% {
-         transform: translate(100%, 0) rotate(360deg) scale(1.2);
-     }
-     100% {
-         opacity: 1;
-         transform: translate(0) rotate(720deg) scale(1);
-     }
- }
+        transform: translate(-100%, -100%) rotate(0) scale(0.5);
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translate(100%, 0) rotate(360deg) scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0) rotate(720deg) scale(1);
+    }
+}
 
 .loader-text {
     animation: animate-loader-text 0.5s ease-out 4.5s forwards;
@@ -208,12 +242,18 @@
     text-transform: uppercase;
     transition: 0.3s ease-out;
     transform: translateX(-3em);
-    z-index: -2;
+    z-index: 0;
 }
 
 @keyframes animate-loader-text {
-    0% { opacity: 0; transform: translateX(-3em); }
-    100% { opacity: 1; transform: translateX(0);}
+    0% {
+        opacity: 0;
+        transform: translateX(-3em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* =================== */
