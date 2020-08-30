@@ -33,7 +33,7 @@ header.container {
     font-size: 1.2rem;
     font-weight: normal;
     letter-spacing: 1px;
-    transition: .3s ease;
+    transition: 0.3s ease;
 }
 
 .app-logo {
@@ -44,33 +44,53 @@ header.container {
     border-left: 1.6rem solid #777;
     margin-right: 0.5rem;
     transform-origin: 33% 50%;
-    transition: .3s ease;
+    transition: 0.3s ease;
 }
 
-.animate-logo { animation: spinLogo .4s ease-in-out; }
+.animate-logo {
+    animation: spinLogo 0.4s ease-in-out;
+}
 
-.fade-in-text { animation: fadeInText .3s ease-in-out; }
+.fade-in-text {
+    animation: fadeInText 0.3s ease-in-out;
+}
 
-.fade-in-widget { animation: fadeInWidget .3s; }
+.fade-in-widget {
+    animation: fadeInWidget 0.3s;
+}
 
 @keyframes spinLogo {
-    100% { transform: rotate(360deg);}
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes fadeInText {
-    0% { opacity: 0; transform: translateX(10px); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes fadeInWidget {
-    0% { opacity: 0; transform: scale(0.9); }
-    100% { opacity: 1; transform: scale(1); }
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .btn-settings {
     cursor: pointer;
     font-size: 1.5em;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .btn-settings:hover {
@@ -88,7 +108,9 @@ header.container {
     transition: 0.3s ease;
 }
 
-.author:hover { opacity: 1; }
+.author:hover {
+    opacity: 1;
+}
 
 /* Header Styles End */
 
@@ -125,7 +147,7 @@ nav .btn {
 nav .btn span,
 .icon {
     pointer-events: none;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 
 nav .btn span {
@@ -144,25 +166,39 @@ nav .btn span {
     transform: rotate(360deg);
 }
 
-.btn:focus .icon { color: #fff; }
+.btn:focus .icon {
+    color: #fff;
+}
 
 .btn-clock:hover,
-.btn-clock:focus { color: var(--clock); }
+.btn-clock:focus {
+    color: var(--clock);
+}
 
 .btn-clock:hover .icon,
-.btn-clock:focus .icon { background-color: var(--clock); }
+.btn-clock:focus .icon {
+    background-color: var(--clock);
+}
 
 .btn-pomodoro:hover,
-.btn-pomodoro:focus { color: var(--pomodoro-timer); }
+.btn-pomodoro:focus {
+    color: var(--pomodoro);
+}
 
 .btn-pomodoro:hover .icon,
-.btn-pomodoro:focus .icon { background-color: var(--pomodoro-timer); }
+.btn-pomodoro:focus .icon {
+    background-color: var(--pomodoro);
+}
 
 .btn-stopwatch:hover,
-.btn-stopwatch:focus { color: var(--stopwatch); }
+.btn-stopwatch:focus {
+    color: var(--stopwatch);
+}
 
 .btn-stopwatch:hover .icon,
-.btn-stopwatch:focus .icon { background-color: var(--stopwatch); }
+.btn-stopwatch:focus .icon {
+    background-color: var(--stopwatch);
+}
 
 /* Navbar Styles End */
 
@@ -171,21 +207,33 @@ nav .btn span {
 /* Media Queries Start */
 
 @media (min-width: 1024px) {
-    .app-title { font-size: 1.5rem; }
-    
-    .author { font-size: 0.9rem; }
+    .app-title {
+        font-size: 1.5rem;
+    }
 
-    .icon { font-size: 1.7rem; } 
+    .author {
+        font-size: 0.9rem;
+    }
 
-    nav .btn span { font-size: 1rem; }    
+    .icon {
+        font-size: 1.7rem;
+    }
+
+    nav .btn span {
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 365px) {
-    .logo-title { width: 52%; }
+    .logo-title {
+        width: 52%;
+    }
 }
 
 @media (max-width: 476px) {
-    nav.container ul { max-width: 100%; }
+    nav.container ul {
+        max-width: 100%;
+    }
 }
 
 @media (max-height: 476px) and (orientation: landscape) {
@@ -196,9 +244,13 @@ nav .btn span {
         max-width: 10vw;
     }
 
-    nav.container ul { flex-direction: column; }
+    nav.container ul {
+        flex-direction: column;
+    }
 
-    nav .btn span { font-size: 0.75rem; }
+    nav .btn span {
+        font-size: 0.75rem;
+    }
 
     .widget {
         height: calc(100% - 50px);

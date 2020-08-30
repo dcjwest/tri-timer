@@ -3,31 +3,48 @@ import { IconContext } from 'react-icons';
 import { MdAccessTime, MdTimer, MdAvTimer } from 'react-icons/md';
 
 const Navbar = ({ setApp }) => {
-
     const handleClick = e => setApp(e.target.value);
 
     return (
-        <nav className='container'>
-            <ul className='container'>
+        <nav className="container">
+            <ul className="container">
                 <li>
-                    <button value='Clock' className='container btn btn-clock' onClick={handleClick}>
-                        <IconContext.Provider value={{className:'icon icon-clock'}}>
+                    <button
+                        value="Clock"
+                        className="container btn btn-clock"
+                        onClick={handleClick}
+                    >
+                        <IconContext.Provider
+                            value={{ className: 'icon icon-clock' }}
+                        >
                             <MdAccessTime />
                         </IconContext.Provider>
                         <span>Clock</span>
                     </button>
                 </li>
                 <li>
-                    <button value='Pomodoro-Timer' className='container btn btn-pomodoro' onClick={handleClick}>
-                        <IconContext.Provider value={{className: 'icon icon-pomodoro'}}>
+                    <button
+                        value="Pomodoro"
+                        className="container btn btn-pomodoro"
+                        onClick={handleClick}
+                    >
+                        <IconContext.Provider
+                            value={{ className: 'icon icon-pomodoro' }}
+                        >
                             <MdAvTimer />
                         </IconContext.Provider>
-                        <span>Pomodoro Timer</span>
+                        <span>Pomodoro</span>
                     </button>
                 </li>
                 <li>
-                    <button value='Stopwatch' className='container btn btn-stopwatch' onClick={handleClick}>
-                        <IconContext.Provider value={{className: 'icon icon-stopwatch'}}>
+                    <button
+                        value="Stopwatch"
+                        className="container btn btn-stopwatch"
+                        onClick={handleClick}
+                    >
+                        <IconContext.Provider
+                            value={{ className: 'icon icon-stopwatch' }}
+                        >
                             <MdTimer />
                         </IconContext.Provider>
                         <span>Stopwatch</span>
@@ -36,6 +53,6 @@ const Navbar = ({ setApp }) => {
             </ul>
         </nav>
     );
-}
+};
 
 export default Navbar;

@@ -26,8 +26,14 @@
 }
 
 @keyframes slide-task-page {
-    0% { opacity: 0; transform: translateX(-100%); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .task-page-header {
@@ -55,12 +61,14 @@
     top: 0.5em;
 }
 
-.back-btn-icon { font-size: 1.3rem; }
+.back-btn-icon {
+    font-size: 1.3rem;
+}
 
 .submit-btn {
-    background-color: var(--pomodoro-timer);
+    background-color: var(--pomodoro);
     border-radius: 10vmax;
-    box-shadow: 0 0 1px rgba(0,0,0,0.3), 0 3px 6px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 6px 1px rgba(0, 0, 0, 0.3);
     color: #fff;
     font-family: inherit;
     font-size: 1.4em;
@@ -71,7 +79,9 @@
     width: 100%;
 }
 
-.submit-btn:hover { opacity: 0.7;}
+.submit-btn:hover {
+    opacity: 0.7;
+}
 
 .submit-btn-icon {
     font-size: 1.2em;
@@ -89,7 +99,9 @@
     width: 100%;
 }
 
-.input-container label { font-size: 1.2em; }
+.input-container label {
+    font-size: 1.2em;
+}
 
 .input-container input {
     border: none;
@@ -117,12 +129,13 @@
 }
 
 .input-container .error {
-    color: var(--pomodoro-timer);
+    color: var(--pomodoro);
     font-size: 0.8em;
-
 }
 
-.input-field { float: right;}
+.input-field {
+    float: right;
+}
 
 .task-info {
     justify-self: flex-start;
@@ -166,7 +179,7 @@
 }
 
 .pomodoro.complete .pomodoro-icon {
-    color: var(--pomodoro-timer);
+    color: var(--pomodoro);
 }
 
 .pomodoro.current {
@@ -250,8 +263,7 @@
 }
 
 .progress-ring-inner {
-    
-    stroke: var(--pomodoro-timer);
+    stroke: var(--pomodoro);
     stroke-miterlimit: 10;
     stroke-width: 1em;
 }
@@ -272,9 +284,9 @@
 }
 
 .pt-start-btn {
-    background-color: var(--pomodoro-timer);
+    background-color: var(--pomodoro);
     border-radius: 50%;
-    box-shadow: 0 0 1px rgba(0,0,0,0.3), 0 3px 6px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 6px 1px rgba(0, 0, 0, 0.3);
     width: 3rem;
     height: 3rem;
     transition: all 0.3s ease-in-out;
@@ -296,7 +308,7 @@
 
 .pt-restart-btn:not(.disabled):hover .pt-restart-icon,
 .pt-add-btn:not(.disabled):hover .pt-add-icon {
-    color: var(--pomodoro-timer);
+    color: var(--pomodoro);
 }
 
 .icon {
@@ -318,7 +330,6 @@
 .pt-add-btn:not(.disabled) .pt-add-icon {
     color: var(--main);
 }
-
 
 @media (max-height: 476px) and (orientation: landscape) {
     .pomodoro-widget {
@@ -353,7 +364,9 @@
 }
 
 @media (min-width: 768px) {
-    .task-page-header h3 { text-align: center; }
+    .task-page-header h3 {
+        text-align: center;
+    }
 
     .task-settings-form {
         width: 50%;
@@ -366,10 +379,12 @@
         padding: 0 2.5em;
     }
 
-    .current-task { text-align: left; }
+    .current-task {
+        text-align: left;
+    }
 
     .input-container input {
-        max-width: 60%; 
+        max-width: 60%;
     }
 
     .timer-info {

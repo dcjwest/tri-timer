@@ -3,41 +3,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&family=Poppins:wght@300&display=swap');
 
 :root {
-  --main: #282c34;
-  --clock: #0049FF;
-  --pomodoro-timer: #E40C2B;
-  --stopwatch: #30DD00;
-  font-size: 16px;
+    --main: #282c34;
+    --clock: #0049ff;
+    --pomodoro: #e40c2b;
+    --stopwatch: #30dd00;
+    font-size: 16px;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: 'Share Tech', sans-serif;
-  height: 100vh;
+    font-family: 'Share Tech', sans-serif;
+    height: 100vh;
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-button, 
+button,
 button:focus,
 button:hover {
-  background-color: none;
-  border: none;
-  cursor: pointer;
-  outline: none;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
 
 @media (min-width: 1440px) {
-  :root {
-    font-size: 1.5vw;
-  }
+    :root {
+        font-size: 1.5vw;
+    }
 }
