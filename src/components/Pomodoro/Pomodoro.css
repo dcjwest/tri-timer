@@ -363,7 +363,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 576px) {
     .task-page-header h3 {
         text-align: center;
     }
